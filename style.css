@@ -13,19 +13,16 @@ body {
 .app {
   display: flex;
   min-height: 100vh;
-  /* grid-template-columns:1fr 3fr; */
-
 }
 
 .side-bar {
   width: 371px;
   height: 1000px;
-  top: -24px;
-  left: -19px;
-  border: 1px;
   background-color: #ffffff;
-
   border: 1px #ebebeb;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 /* naptune logo ---------------------------------------*/
@@ -41,7 +38,9 @@ body {
 
 /* jessica thompson -----------------------------------------*/
 .user-card {
-  width: 288px;
+  display: flex;
+  width: 80%;
+  max-width: 80%;
   height: 69px;
   padding: 12px;
   gap: 20px;
@@ -210,6 +209,12 @@ ul {
   flex: 1;
   padding: 32px 40px;
 }
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
 
 /* Breadcrumb */
 .breadcrumb {
@@ -253,6 +258,13 @@ ul {
   outline: none;
   width: 100%;
   font-size: 14px;
+}
+button{
+  border: none;
+  background-color: none;
+}
+button:hover{
+  cursor: pointer;
 }
 
 /* ---------- TABLE --------*/
@@ -330,6 +342,10 @@ ul {
   border-radius: 8px;
   font-size: 14px;
 }
+.btn:hover{
+  cursor: pointer;
+  opacity: 0.7;
+}
 
 .outline {
   background: white;
@@ -337,10 +353,16 @@ ul {
   color: #5A657F;
 }
 
+
 .dots {
+  background: none;
+  border: none;
   text-align: center;
 }
-
+.dots:hover{
+  cursor: pointer;
+  background-color: #f0f2f4;
+}
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1024px) {

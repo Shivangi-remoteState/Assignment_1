@@ -101,7 +101,7 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  margin-bottom: 40px;
+  margin-bottom: 40px; 
 }
 
 .nav-item {
@@ -116,6 +116,24 @@ ul {
 
   border-radius: 6px;
   cursor: pointer;
+
+ 
+}
+.nav-item:hover{
+  background-color: #D3F7B5;
+ 
+ 
+}
+.nav-list a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-list a:hover,
+.nav-list a:focus,
+.nav-list a:active,
+.nav-list a:visited {
+  text-decoration: none;
 }
 
 .nav-icon {
@@ -131,6 +149,8 @@ ul {
   line-height: 140%;
   font-size: 16px;
   color: #626D82;
+ 
+  
 }
 
 .nav-item.active {

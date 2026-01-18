@@ -18,7 +18,7 @@ body {
 .side-bar {
   background-color: #ffffff;
   border: 1px #ebebeb;
-  padding: 26px 0 0 25px;
+  padding: 36px 35px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,12 +27,12 @@ body {
 .NUL{
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 39px;
 }
 .NU{
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 25px;
 }
 /* ---------------naptune logo ------------------------*/
 .logo-img {
@@ -45,8 +45,8 @@ body {
 
 .user-card {
   display: flex;
-  width: 80%;
-  max-width: 80%;
+  width: 100%;
+  max-width: 371px;
   height: 69px;
   padding: 12px;
 
@@ -95,7 +95,7 @@ ul {
   padding: 0 14px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   border-radius: 6px;
   cursor: pointer;
 }
@@ -137,7 +137,7 @@ ul {
   gap: 6px;
   box-sizing: border-box;
   font-family: "Spline Sans", sans-serif;
-  padding-bottom: 20px;
+  
 }
 
 /* --------Icon-------- */
@@ -201,12 +201,15 @@ ul {
 .breadcrumb {
   display: flex;
   gap: 15px;
-  font-size: 14px;
-  color: #9ca3af;
+ 
   padding: 10px;
+}
+#sidebtn{
+  border: none;
 }
 #doc-dropdown {
   border: none;
+  background-color:#9ca3af ;
 }
 #home,
 #doc {
@@ -230,7 +233,7 @@ ul {
   font-weight: 600;
 }
 
-.search {
+.search{
   display: flex;
   align-items: center;
   background: #ffffff;
@@ -247,7 +250,13 @@ ul {
   width: 100%;
   font-size: 14px;
 }
-.search-btn {
+.search-icon{
+  width: 16.64px;
+  height: 16.64px;
+  color: #B5BDCD;
+}
+.search-btn, .dropdown, #doc-dropdown {
+  
   border: none;
   background-color: white;
   cursor: pointer;
@@ -258,6 +267,7 @@ ul {
   gap: 14px;
 }
 
+
 .add-btn {
   height: 47px;
   padding: 0 18px;
@@ -267,6 +277,7 @@ ul {
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  color: #626D82;
 }
 
 .add-btn:hover {
@@ -276,35 +287,46 @@ ul {
 /*  -----------     Table main part------------- */
 
 .doc-table {
-  width: 100%;
+  width:100%;
+  table-layout: 100%;  
+
   border-collapse: collapse;
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
+  table-layout: auto;
 }
 
 .doc-table thead {
   background: #f9fafb;
 }
 
+
 .doc-table th,
 .doc-table td {
-  padding-right: 30px;
-  padding: 20px 40px;
+  vertical-align: middle;
+  padding-bottom: 20px;
+  padding-top: 20px;
   text-align: left;
   font-size: 16px;
   color: #344054;
-  font-weight: 600px;
+  font-weight: 600;
 }
 
-th td {
-  display: flex;
+/* ---------- Checkbox column ---------- */
+.doc-table th:first-child,
+.doc-table td:first-child {
+  width: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
+/* ---------- Rows ---------- */
 .doc-table tbody tr {
   border: 1px solid #eef1f4;
 }
 
+/* ---------- Document link ---------- */
 .doc-link {
   color: #436d7c;
   text-decoration: none;
@@ -315,12 +337,14 @@ th td {
   text-decoration: underline;
 }
 
+/* ---------- Status badges ---------- */
 .badge {
   padding: 4px 24px;
   border-radius: 999px;
   font-size: 12px;
   font-weight: 500;
   display: inline-block;
+  white-space: nowrap;
 }
 
 .needs-signing {
@@ -345,86 +369,69 @@ th td {
   color: #98a2b3;
 }
 
-.time {
-  font-size: 12px;
-  color: #667085;
+/* ---------- Date ---------- */
+.time,
+.last-date {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #626D82;
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 12px 30px;
+/* --------Action button----------- */
+
+.action-btn-cell {
+  padding: 12px 20px;
+  white-space: nowrap;
+   padding-right: 0 ;
+  width: 1%;
+  white-space: nowrap;
 }
 
+/* ---------- Button ---------- */
 .btn {
   height: 34px;
   width: 134px;
-  border: 1px solid #b5bdcd;
+  border: 1px solid #B5BDCD;
   background: #fff;
-  color: #626d82;
+  color: #626D82;
+  font-weight: 500;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
 }
+
 .btn:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
+/* ---Menu dot cell------ */
+
+.action-menu-cell {
+  padding: 12px 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ---------- Menu ---------- */
 .menu {
-  cursor: pointer;
-  font-size: 18px;
-  color: #667085;
-}
-.click {
-  background-color: white;
-  border: none;
-}
-.doc-table {
-  width: 100%;
-  table-layout: fixed;
+  position: relative;
+  display: inline-block;
 }
 
-/* --------Column widths -------*/
-.col-check {
-  width: 5%;
-}
-
-.col-name {
-  width: 35%;
-}
-
-.col-status {
-  width: 20%;
-}
-
-.col-modified {
-  width: 20%;
-}
-
-.col-actions {
-  width: 20%;
-  text-align: right !important;
-}
-
-.doc-table td:last-child,
-.doc-table th:last-child {
-  text-align: right;
-  padding-right: 30px;
-}
 .dots {
   background: none;
   border: none;
-  text-align: center;
-}
-.dots:hover {
+  padding: 6px;
   cursor: pointer;
-  background-color: #f0f2f4;
-}
-.menu {
-  position: relative;
 }
 
+.dots:hover {
+  background-color: #f0f2f4;
+  border-radius: 6px;
+}
+
+/* ---------- Dropdown ---------- */
 .menu-dropdown {
   position: absolute;
   top: 36px;
@@ -437,7 +444,10 @@ th td {
   display: none;
   z-index: 100;
 }
-
+.doc-table tbody tr:last-child .menu-dropdown {
+  top: auto;
+  bottom: 36px;
+}
 .menu:hover .menu-dropdown {
   display: block;
 }
@@ -459,7 +469,29 @@ th td {
   color: #d92d20;
 }
 
-@media (max-width: 1024px) {
+
+
+.action-menu-cell {
+  padding-left: 6px ;
+  width: 1%;
+  white-space: nowrap;
+}
+.doc-table td:nth-child(2),
+.doc-table th:nth-child(2) {
+  padding-right: 25px ;
+  padding-left: 18px;
+}
+
+
+
+.change{
+  display: flex;
+  gap: 8px;
+padding-right: 150px;
+}
+
+
+/* @media (max-width: 1024px) {
   .app {
     flex-direction: column;
   }
@@ -491,4 +523,4 @@ th td {
     display: block;
     overflow-x: auto;
   }
-}
+} */

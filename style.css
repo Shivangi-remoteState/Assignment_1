@@ -27,7 +27,7 @@ body {
   width: 22%;
   min-width: 260px;
   flex-shrink: 1;
-  /* height: 1100px; */
+ 
 }
 .NUL{
   display: flex;
@@ -162,14 +162,13 @@ ul {
 
 /* ---------Description text-------- */
 .support-text {
-  /* width: 276px; */
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
   color: #626d82;
   font-family: "Spline Sans", sans-serif;
   font-style: normal;
-    max-width: 100%;
+  max-width: 100%;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -387,10 +386,7 @@ ul {
   line-height: 1.2;
   color: #626D82;
 }
-
-/* ==================================================
-   ACTION BUTTON COLUMN (NEW)
-================================================== */
+/* action button */
 
 .action-btn-cell {
   padding: 12px 20px;
@@ -417,9 +413,7 @@ ul {
   opacity: 0.8;
 }
 
-/* ==================================================
-   MENU (DOTS) COLUMN (NEW)
-================================================== */
+/* menu button */
 
 .action-menu-cell {
   padding: 12px 20px;

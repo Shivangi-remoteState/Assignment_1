@@ -13,6 +13,8 @@ body {
 .app {
   display: flex;
   min-height: 100vh;
+   display: flex;
+  overflow-x: auto;
 }
 
 .side-bar {
@@ -23,6 +25,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
   width: 22%;
+  min-width: 260px;
+  flex-shrink: 1;
+  /* height: 1100px; */
 }
 .NUL{
   display: flex;
@@ -157,13 +162,16 @@ ul {
 
 /* ---------Description text-------- */
 .support-text {
-  width: 276px;
+  /* width: 276px; */
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
   color: #626d82;
   font-family: "Spline Sans", sans-serif;
   font-style: normal;
+    max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .text-btn{
   display: flex;
@@ -195,6 +203,8 @@ ul {
   display: flex;
   gap: 25px;
   flex-direction: column;
+ 
+  min-width: 0;
 }
 
 /* --------Breadcrumb ----*/
@@ -301,12 +311,12 @@ ul {
   background: #f9fafb;
 }
 
-
 .doc-table th,
 .doc-table td {
   vertical-align: middle;
   padding-bottom: 20px;
   padding-top: 20px;
+  /* padding: 20px 40px; */
   text-align: left;
   font-size: 16px;
   color: #344054;
@@ -378,7 +388,9 @@ ul {
   color: #626D82;
 }
 
-/* --------Action button----------- */
+/* ==================================================
+   ACTION BUTTON COLUMN (NEW)
+================================================== */
 
 .action-btn-cell {
   padding: 12px 20px;
@@ -405,7 +417,9 @@ ul {
   opacity: 0.8;
 }
 
-/* ---Menu dot cell------ */
+/* ==================================================
+   MENU (DOTS) COLUMN (NEW)
+================================================== */
 
 .action-menu-cell {
   padding: 12px 20px;
@@ -479,19 +493,19 @@ ul {
 .doc-table td:nth-child(2),
 .doc-table th:nth-child(2) {
   padding-right: 25px ;
-  padding-left: 18px;
+  padding-left: 20px;
 }
 
 
 
 .change{
   display: flex;
-  gap: 8px;
 padding-right: 150px;
+gap: 8px;
 }
+/* 
 
-
-/* @media (max-width: 1024px) {
+@media (max-width: 1024px) {
   .app {
     flex-direction: column;
   }

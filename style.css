@@ -13,8 +13,7 @@ body {
 .app {
   display: flex;
   min-height: 100vh;
-   display: flex;
-  overflow-x: auto;
+  display: flex;
 }
 
 .side-bar {
@@ -27,18 +26,21 @@ body {
   width: 22%;
   min-width: 260px;
   flex-shrink: 1;
- 
+
 }
-.NUL{
+
+.NUL {
   display: flex;
   flex-direction: column;
   gap: 39px;
 }
-.NU{
+
+.NU {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
+
 /* ---------------naptune logo ------------------------*/
 .logo-img {
   width: 168px;
@@ -62,19 +64,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
-.avatar-userinfo{
+
+.avatar-userinfo {
   display: flex;
   gap: 12px;
 }
 
-.user-info name{
+.name {
   font-family: "Spline Sans", sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: #2a2a2a;
-  line-height: 140%;
   display: flex;
   flex-direction: column;
 }
@@ -85,6 +87,7 @@ body {
   font-weight: 400;
   color: #626d82;
 }
+
 #dropdown {
   border: none;
 }
@@ -104,9 +107,11 @@ ul {
   border-radius: 6px;
   cursor: pointer;
 }
+
 .nav-item:hover {
   background-color: #d3f7b5;
 }
+
 .nav-list a {
   text-decoration: none;
   color: inherit;
@@ -142,11 +147,11 @@ ul {
   gap: 6px;
   box-sizing: border-box;
   font-family: "Spline Sans", sans-serif;
-  
+
 }
 
 /* --------Icon-------- */
-.tel-trouble{
+.tel-trouble {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -167,16 +172,17 @@ ul {
   line-height: 140%;
   color: #626d82;
   font-family: "Spline Sans", sans-serif;
-  font-style: normal;
   max-width: 100%;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
   overflow-wrap: break-word;
 }
-.text-btn{
+
+.text-btn {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
+
 /*------- Button -------*/
 .support-btn {
   width: 97px;
@@ -202,30 +208,33 @@ ul {
   display: flex;
   gap: 25px;
   flex-direction: column;
- 
-  min-width: 0;
+
+  /* min-width: 0; */
 }
 
 /* --------Breadcrumb ----*/
 .breadcrumb {
   display: flex;
   gap: 15px;
- 
   padding: 10px;
 }
-#sidebtn{
+
+#sidebtn {
   border: none;
 }
+
 #doc-dropdown {
   border: none;
-  background-color:#9ca3af ;
+  background-color: #9ca3af;
 }
+
 #home,
 #doc {
   color: #436d7c;
   text-decoration: none;
   font-size: 16px;
 }
+
 /* ------Header--- */
 .header {
   display: flex;
@@ -242,7 +251,7 @@ ul {
   font-weight: 600;
 }
 
-.search{
+.search {
   display: flex;
   align-items: center;
   background: #ffffff;
@@ -259,17 +268,22 @@ ul {
   width: 100%;
   font-size: 14px;
 }
-.search-icon{
+
+.search-icon {
   width: 16.64px;
   height: 16.64px;
   color: #B5BDCD;
 }
-.search-btn, .dropdown, #doc-dropdown {
-  
+
+.search-btn,
+.dropdown,
+#doc-dropdown {
+
   border: none;
   background-color: white;
   cursor: pointer;
 }
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -296,9 +310,7 @@ ul {
 /*  -----------     Table main part------------- */
 
 .doc-table {
-  width:100%;
-  table-layout: 100%;  
-
+  width: 100%;
   border-collapse: collapse;
   background: #fff;
   border-radius: 8px;
@@ -315,7 +327,6 @@ ul {
   vertical-align: middle;
   padding-bottom: 20px;
   padding-top: 20px;
-  /* padding: 20px 40px; */
   text-align: left;
   font-size: 16px;
   color: #344054;
@@ -386,14 +397,13 @@ ul {
   line-height: 1.2;
   color: #626D82;
 }
-/* action button */
 
+/* --action button ------*/
 .action-btn-cell {
   padding: 12px 20px;
   white-space: nowrap;
-   padding-right: 0 ;
+  padding-right: 0;
   width: 1%;
-  white-space: nowrap;
 }
 
 /* ---------- Button ---------- */
@@ -417,14 +427,11 @@ ul {
 
 .action-menu-cell {
   padding: 12px 20px;
-  text-align: center;
-  white-space: nowrap;
 }
 
 /* ---------- Menu ---------- */
 .menu {
   position: relative;
-  display: inline-block;
 }
 
 .dots {
@@ -447,15 +454,16 @@ ul {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   width: 140px;
   display: none;
   z-index: 100;
 }
+
 .doc-table tbody tr:last-child .menu-dropdown {
   top: auto;
   bottom: 36px;
 }
+
 .menu:hover .menu-dropdown {
   display: block;
 }
@@ -480,55 +488,19 @@ ul {
 
 
 .action-menu-cell {
-  padding-left: 6px ;
+  padding-left: 6px;
   width: 1%;
   white-space: nowrap;
 }
+
 .doc-table td:nth-child(2),
 .doc-table th:nth-child(2) {
-  padding-right: 25px ;
+  padding-right: 25px;
   padding-left: 20px;
 }
 
-
-
-.change{
+.change {
   display: flex;
-padding-right: 150px;
-gap: 8px;
+  padding-right: 150px;
+  gap: 8px;
 }
-/* 
-
-@media (max-width: 1024px) {
-  .app {
-    flex-direction: column;
-  }
-
-  .side-bar {
-    width: 100%;
-    height: auto;
-  }
-
-  .support-card {
-    display: none;
-  }
-
-  .main {
-    padding: 16px;
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .search {
-    width: 100%;
-  }
-
-  .doc-table {
-    display: block;
-    overflow-x: auto;
-  }
-} */

@@ -25,7 +25,7 @@
                 <img src="./images/Group 79 .png" alt="User-avatar" />
               </div>
               <div class="user-info">
-                <div><span class="name"><b>Jessica Thompson</b></span></div>
+                <div class="name"><span><b>Jessica Thompson</b></span></div>
                 <small><span class="role">Primary User</span></small>
               </div>
             </div>
@@ -36,33 +36,46 @@
         </div>
         <!-- nav-item list------------------------- --->
         <div class="sidebar">
-          <ul class="nav-list">
-            <li class="nav-item">
-              <img src="./images/home.svg" class="nav-icon" />
-              <a href="https://home"><span class="nav-text">Home</span></a>
-            </li>
+          <nav class="primary">
+            <ul class="nav-list">
+              <li>
+                <a href="https://home" class="nav-item">
+                  <img src="./images/home.svg" alt="" class="nav-icon" />
+                  <span class="nav-text">Home</span>
+                </a>
+              </li>
 
-            <li class="nav-item active">
-              <img src="./images/file-text.svg" class="nav-icon" />
-              <a href="https://Document"><span class="nav-text">Documents</span></a>
-            </li>
+              <li>
+                <a href="https://Document" class="nav-item active" aria-current="page">
+                  <img src="./images/file-text.svg" alt="" class="nav-icon" />
+                  <span class="nav-text">Documents</span>
+                </a>
+              </li>
 
-            <li class="nav-item">
-              <img src="./images/message-circle.svg" class="nav-icon" />
-              <a href="https://Chat"><span class="nav-text">Chat with Neptune</span></a>
-            </li>
+              <li>
+                <a href="https://Chat" class="nav-item">
+                  <img src="./images/message-circle.svg" alt="" class="nav-icon" />
+                  <span class="nav-text">Chat with Neptune</span>
+                </a>
+              </li>
 
-            <li class="nav-item">
-              <img src="./images/help-circle.svg" class="nav-icon" />
-              <a href="https://help"><span class="nav-text">Help</span></a>
-            </li>
+              <li>
+                <a href="https://help" class="nav-item">
+                  <img src="./images/help-circle.svg" alt="" class="nav-icon" />
+                  <span class="nav-text">Help</span>
+                </a>
+              </li>
 
-            <li class="nav-item">
-              <img src="./images/settings.svg" class="nav-icon" />
-              <a href="https://Setting"><span class="nav-text">Settings</span></a>
-            </li>
-          </ul>
+              <li>
+                <a href="https://Setting" class="nav-item">
+                  <img src="./images/settings.svg" alt="" class="nav-icon" />
+                  <span class="nav-text">Settings</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
+
       </div>
       <!-- ------support card------------------------ -->
       <div class="support-card">
@@ -87,9 +100,9 @@
     <!-- MAIN -->
     <div class="main">
       <div class="breadcrumb">
-        <span class="homebar"><a id="home" href="#"><b>Home</b></a></span>
-        <span class="sideicon"><button id="sidebtn"><img src="./images/chevron-right.svg" alt=""></button></span>
-        <span class="doc"><a id="doc" href="#">Documents</a></span>
+        <a class="homebar" id="home" href="#https//home"><b>Home</b></a>
+        <button id="sidebtn"><img class="sideicon" src="./images/chevron-right.svg" alt=""></button>
+        <a class="doc" id="doc" href="#">Documents</a>
       </div>
       <div class="header">
         <h1>My Documents</h1>
@@ -114,17 +127,10 @@
           <tr>
             <th class="change "><input type="checkbox" />
               <button class="dropdown drop">
-                <span class="down-arrow">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M6 9l6 6 6-6" stroke="#98A2B3" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
+
+                <img src="./images/chevron-down.svg" alt="dropdown" />
               </button>
             </th>
-
-
-            <!-- <th><input type="checkbox" /></th> -->
             <th>Document Name</th>
             <th>Status</th>
             <th>Last Modified</th>
@@ -134,7 +140,7 @@
         </thead>
 
         <tbody>
-          <!-- ROW 1 -->
+          <!-- ROW 1 ----------------->
           <tr>
             <td><input type="checkbox" /></td>
             <td><a href="#" class="doc-link">Title of Document Goes Here</a></td>
@@ -159,7 +165,7 @@
             </td>
           </tr>
 
-          <!-- ROW 2 -->
+          <!-- ROW 2 ------------------------>
           <tr>
             <td><input type="checkbox" /></td>
             <td><a href="#" class="doc-link">Title of Document Goes Here</a></td>

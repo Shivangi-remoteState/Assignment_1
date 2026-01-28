@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body>
@@ -29,8 +30,11 @@
                 <small><span class="role">Primary User</span></small>
               </div>
             </div>
-            <div class="dropdown">
-              <button"><img src="./images/chevron-down.svg" alt="dropdown" /></button>
+            <div>
+              <button id="user-drop" class="dropdown"><img src="./images/chevron-down.svg" alt="dropdown" /></button>
+            </div>
+            <div class="logout-menu">
+              <button id="logoutBtn">Logout</button>
             </div>
           </div>
         </div>
@@ -99,11 +103,13 @@
 
     <!-- MAIN -->
     <div class="main">
+      <!-- breadcrumb -->
       <div class="breadcrumb">
         <a class="homebar" id="home" href="#https//home"><b>Home</b></a>
         <button id="sidebtn"><img class="sideicon" src="./images/chevron-right.svg" alt=""></button>
         <a class="doc" id="doc" href="#">Documents</a>
       </div>
+      <!-- ------------header----------- -->
       <div class="header">
         <h1>My Documents</h1>
 
@@ -112,36 +118,37 @@
           <button class="add-btn">+ Add</button>
 
           <div class="search">
-            <input placeholder="Search documents" />
+            <input id="searchInput" placeholder="Search documents" />
             <span class="search-icon">
-              <button class="search-btn">
+              <button class="search-btn" type="button">
                 <img class="search-icon" src="./images/search.svg" alt="" />
               </button>
             </span>
           </div>
         </div>
       </div>
+      <!-- table -->
+      <div class="mainTable">
+        <table class="doc-table">
 
-      <table class="doc-table">
-        <thead>
-          <tr>
-            <th class="change "><input type="checkbox" />
-              <button class="dropdown drop">
+          <thead>
+            <tr>
+              <th class="change "><input type="checkbox" />
+                <button class="dropdown drop">
+                  <img src="./images/chevron-down.svg" alt="dropdown" />
+                </button>
+              </th>
+              <th>Document Name</th>
+              <th>Status</th>
+              <th>Last Modified</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
 
-                <img src="./images/chevron-down.svg" alt="dropdown" />
-              </button>
-            </th>
-            <th>Document Name</th>
-            <th>Status</th>
-            <th>Last Modified</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <!-- ROW 1 ----------------->
-          <tr>
+          <tbody>
+            <!-- ROW 1 --------------- -->
+            <!-- <tr>
             <td><input type="checkbox" /></td>
             <td><a href="#" class="doc-link">Title of Document Goes Here</a></td>
             <td><span class="badge needs-signing">Needs Signing</span></td>
@@ -163,10 +170,10 @@
                 </div>
               </div>
             </td>
-          </tr>
+          </tr> -->
 
-          <!-- ROW 2 ------------------------>
-          <tr>
+            <!-- ROW 2 ------------------------>
+            <!-- <tr>
             <td><input type="checkbox" /></td>
             <td><a href="#" class="doc-link">Title of Document Goes Here</a></td>
             <td>
@@ -191,10 +198,10 @@
                 </div>
               </div>
             </td>
-          </tr>
+          </tr> -->
 
-          <!-- ROW 3 -->
-          <tr>
+            <!-- ROW 3 -->
+            <!-- <tr>
             <td><input type="checkbox" /></td>
             <td><a href="#" class="doc-link">Title of Document Goes Here</a></td>
             <td>
@@ -219,10 +226,10 @@
                 </div>
               </div>
             </td>
-          </tr>
+          </tr> -->
 
-          <!-- ROW 4 -->
-          <tr>
+            <!-- ROW 4 -->
+            <!-- <tr>
             <td><input type="checkbox" /></td>
             <td><a href="#" class="doc-link">Title of Document Goes Here</a></td>
             <td><span class="badge completed">Completed</span></td>
@@ -244,10 +251,10 @@
                 </div>
               </div>
             </td>
-          </tr>
+          </tr> -->
 
-          <!-- ROW 5 -->
-          <tr>
+            <!-- ROW 5 -->
+            <!-- <tr>
             <td><input type="checkbox" /></td>
             <td><a href="#" class="doc-link">Title of Document Goes Here</a></td>
             <td><span class="badge completed">Completed</span></td>
@@ -269,10 +276,10 @@
                 </div>
               </div>
             </td>
-          </tr>
+          </tr> -->
 
-          <!-- ROW 6 -->
-          <tr>
+            <!-- ROW 6 -->
+            <!-- <tr>
             <td><input type="checkbox" /></td>
             <td><a href="#" class="doc-link">Title of Document Goes Here</a></td>
             <td><span class="badge completed">Completed</span></td>
@@ -293,13 +300,45 @@
                   <div class="menu-item delete">Delete</div>
                 </div>
               </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
+            </td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
+  <!-- Add documentform -->
+  <div class="addDoc" id="addDoc">
+    <div class="addDoc-content">
+      <h2>Add New Document</h2>
+      <form id="addForm">
+        <label for="docName">Document Name:</label>
+        <input type="text" id="docName">
+
+        <label for="docStatus">Status:</label>
+        <select id="docStatus">
+          <option value="Needs Signing">Needs Signing</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+
+        <div id="pendingPeopleDiv">
+          <label>Waiting for (number of persons):</label>
+          <input type="number" id="pendingCount">
+        </div>
+
+        <div class="DocBtns">
+          <button type="button" id="cancelAdd" class="cancel-btn">Cancel</button>
+          <button type="submit" id="saveAdd" class="save-btn">Save</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
 </body>
+
+
 
 </html>

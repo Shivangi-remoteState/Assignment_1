@@ -16,21 +16,19 @@ dropDownBtn.addEventListener("click", () => {
 });
 document.addEventListener("click", (e) => {
     const target = e.target;
-    console.log(target);
+    // console.log(target);
     const clickDropBtn = dropDownBtn.contains(target);
     const clickLogBtn = logOutMenu.contains(target);
     if (!clickDropBtn && !clickLogBtn) {
         logOutMenu.style.display = "none";
     }
 });
-
 // add doc when clicking add button
 const addBtn = document.querySelector(".add-btn");
 const addDoc = document.querySelector(".addDoc");
 addBtn.addEventListener("click", () => {
     addDoc.style.display = "flex";
 });
-
 // cancel
 const cancelForm = document.getElementById("cancelAdd");
 cancelForm.addEventListener("click", () => {
@@ -42,7 +40,6 @@ addDoc.addEventListener("click", (e) => {
         addDoc.style.display = "none";
     }
 });
-
 // pending status
 const docStatus = document.getElementById("docStatus");
 const pendingPeopleDiv = document.getElementById("pendingPeopleDiv");

@@ -7,7 +7,7 @@ interface Documents {
   time: string;
 }
 
-let editId: number | null = null;
+let editId: number|null = null;
 
 let documents: Documents[] = JSON.parse(localStorage.getItem("documents") || "[]");
 function saveToLocal(): void {
@@ -27,7 +27,7 @@ dropDownBtn.addEventListener("click", () => {
 
 document.addEventListener("click", (e:MouseEvent) => {
   const target = e.target as HTMLElement;
-  console.log(target);
+  // console.log(target);
   const clickDropBtn = dropDownBtn.contains(target);
   const clickLogBtn = logOutMenu.contains(target);
 
@@ -37,7 +37,7 @@ document.addEventListener("click", (e:MouseEvent) => {
 });
 
 // add doc when clicking add button
-const addBtn = document.querySelector(".add-btn") as HTMLElement;
+const addBtn = document.querySelector(".add-btn") as HTMLButtonElement;
 const addDoc = document.querySelector(".addDoc") as HTMLElement;
 
 addBtn.addEventListener("click", () => {
@@ -124,9 +124,7 @@ addForm.addEventListener("submit", (e:SubmitEvent) => {
 });
 
 // row
-const tbody = document.querySelector(
-  ".doc-table tbody",
-) as HTMLTableSectionElement;
+const tbody = document.querySelector(".doc-table tbody") as HTMLTableSectionElement;
 function generateTableRow(doc: Documents):string {
   let buttonText: string = "";
   if (doc.status === "Needs Signing") {
@@ -206,6 +204,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
+
 // delete
 document.addEventListener("click",(e)=>{
     const target = e.target as HTMLElement;
@@ -220,6 +219,7 @@ document.addEventListener("click",(e)=>{
         alert("Document deleted successfully")
     }
 })
+
 // search
 const searchInp = document.querySelector("#searchInput") as HTMLInputElement
 function search(searchText:string){
@@ -238,4 +238,5 @@ function search(searchText:string){
 searchInp.addEventListener("input",()=>{
     search(searchInp.value);
 })
+
 

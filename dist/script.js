@@ -6,14 +6,16 @@ function saveToLocal() {
 }
 const dropDownBtn = document.querySelector(".dropdown");
 const logOutMenu = document.querySelector(".logout-menu");
-dropDownBtn.addEventListener("click", () => {
-    if (logOutMenu.style.display === "block") {
-        logOutMenu.style.display = "none";
-    }
-    else {
-        logOutMenu.style.display = "block";
-    }
-});
+if (dropDownBtn) {
+    dropDownBtn.addEventListener("click", () => {
+        if (logOutMenu.style.display === "block") {
+            logOutMenu.style.display = "none";
+        }
+        else {
+            logOutMenu.style.display = "block";
+        }
+    });
+}
 document.addEventListener("click", (e) => {
     const target = e.target;
     // console.log(target);

@@ -14,22 +14,24 @@ function saveToLocal(): void {
   localStorage.setItem("documents", JSON.stringify(documents));
 }
 
-const dropDownBtn = document.querySelector(".dropdown") as HTMLButtonElement;
-const logOutMenu = document.querySelector(".logout-menu") as HTMLElement;
+const dropDownBtn =<HTMLButtonElement> document.querySelector(".dropdown");
+const logOutMenu = <HTMLElement>document.querySelector(".logout-menu");
 
-dropDownBtn.addEventListener("click", () => {
+if(dropDownBtn){
+  dropDownBtn.addEventListener("click", () => {
   if (logOutMenu.style.display === "block") {
     logOutMenu.style.display = "none";
   } else {
     logOutMenu.style.display = "block";
   }
 });
+}
 
 document.addEventListener("click", (e:MouseEvent) => {
-  const target = e.target as HTMLElement;
+  const target = <HTMLElement>e.target;
   // console.log(target);
-  const clickDropBtn = dropDownBtn.contains(target);
-  const clickLogBtn = logOutMenu.contains(target);
+  const clickDropBtn:boolean = dropDownBtn.contains(target);
+  const clickLogBtn:boolean = logOutMenu.contains(target);
 
   if (!clickDropBtn && !clickLogBtn) {
     logOutMenu.style.display = "none";
@@ -37,29 +39,33 @@ document.addEventListener("click", (e:MouseEvent) => {
 });
 
 // add doc when clicking add button
-const addBtn = document.querySelector(".add-btn") as HTMLButtonElement;
-const addDoc = document.querySelector(".addDoc") as HTMLElement;
+const addBtn = <HTMLButtonElement>document.querySelector(".add-btn");
+const addDoc = <HTMLElement>document.querySelector(".addDoc");
 
-addBtn.addEventListener("click", () => {
+if(addBtn){
+  addBtn.addEventListener("click", () => {
   addDoc.style.display = "flex";
 });
+}
 
 // cancel
-const cancelForm = document.getElementById("cancelAdd") as HTMLElement;
-cancelForm.addEventListener("click", () => {
+const cancelForm =<HTMLElement> document.getElementById("cancelAdd");
+if(cancelForm){
+  cancelForm.addEventListener("click", () => {
   addDoc.style.display = "none";
 });
+}
 
 addDoc.addEventListener("click", (e:MouseEvent) => {
-  const target = e.target as HTMLElement;
+  const target = <HTMLElement>e.target;
   if (target === addDoc) {
     addDoc.style.display = "none";
   }
 });
 
 // pending status
-const docStatus = document.getElementById("docStatus") as HTMLInputElement;
-const pendingPeopleDiv = document.getElementById("pendingPeopleDiv") as HTMLElement;
+const docStatus = <HTMLInputElement>document.getElementById("docStatus");
+const pendingPeopleDiv =<HTMLElement> document.getElementById("pendingPeopleDiv");
 docStatus.addEventListener("change", () => {
   if (docStatus.value === "Pending") {
     pendingPeopleDiv.style.display = "block";
@@ -68,9 +74,9 @@ docStatus.addEventListener("change", () => {
   }
 });
 
-const docName = document.getElementById("docName") as HTMLInputElement;
+const docName =<HTMLInputElement> document.getElementById("docName");
 // form
-const addForm = document.getElementById("addForm") as HTMLFormElement;
+const addForm = <HTMLFormElement>document.getElementById("addForm");
 addForm.addEventListener("submit", (e:SubmitEvent) => {
   e.preventDefault();
   const name = docName.value.trim();
@@ -124,7 +130,7 @@ addForm.addEventListener("submit", (e:SubmitEvent) => {
 });
 
 // row
-const tbody = document.querySelector(".doc-table tbody") as HTMLTableSectionElement;
+const tbody =<HTMLTableSectionElement> document.querySelector(".doc-table tbody");
 function generateTableRow(doc: Documents):string {
   let buttonText: string = "";
   if (doc.status === "Needs Signing") {
@@ -180,14 +186,14 @@ function load() {
 load();
 
 // edit
-document.addEventListener("click", (e) => {
+document.addEventListener("click", (e:MouseEvent) => {
   //    console.log(e)
-  const target = e.target as HTMLElement;
+  const target =<HTMLElement> e.target ;
   //    console.log(target.classList.contains("menu-item"))
   //   const tr = target.closest("tr");
   //   console.log(target.closest("tr"))
   if (target.classList.contains("edit")) {
-    const tr = target.closest("tr") as HTMLElement;
+    const tr = <HTMLElement>target.closest("tr");
     const id = Number(tr.dataset.id);
     editId = id;
     const doc = documents.find((d) => d.id === id);
@@ -206,10 +212,10 @@ document.addEventListener("click", (e) => {
 
 
 // delete
-document.addEventListener("click",(e)=>{
-    const target = e.target as HTMLElement;
+document.addEventListener("click",(e:MouseEvent)=>{
+    const target =<HTMLElement> e.target;
     if(target.classList.contains("delete")){
-        const tr = target.closest("tr") as HTMLElement;
+        const tr = <HTMLElement>target.closest("tr");
         const id = Number(tr.dataset.id)
 
         documents = documents.filter((doc)=>doc.id !==id)
@@ -221,7 +227,7 @@ document.addEventListener("click",(e)=>{
 })
 
 // search
-const searchInp = document.querySelector("#searchInput") as HTMLInputElement
+const searchInp =<HTMLInputElement> document.querySelector("#searchInput")
 function search(searchText:string){
     searchText = searchText.toLowerCase();
     const filterDoc = documents.filter((doc)=>{

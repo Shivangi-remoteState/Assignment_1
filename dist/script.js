@@ -38,7 +38,6 @@ document.addEventListener("click", (e) => {
         logOutMenu.style.display = "none";
     }
 });
-// add doc when clicking add button
 const addBtn = document.querySelector(".add-btn");
 const addDoc = document.querySelector(".addDoc");
 if (addBtn) {
@@ -48,7 +47,6 @@ if (addBtn) {
         }
     });
 }
-// cancel
 const cancelForm = document.getElementById("cancelAdd");
 if (cancelForm) {
     cancelForm.addEventListener("click", () => {
@@ -63,7 +61,6 @@ addDoc.addEventListener("click", (e) => {
         addDoc.style.display = "none";
     }
 });
-// pending status
 const docStatus = document.getElementById("docStatus");
 const pendingPeopleDiv = document.getElementById("pendingPeopleDiv");
 if (docStatus) {
@@ -78,7 +75,6 @@ if (docStatus) {
         }
     });
 }
-// form
 const docName = document.getElementById("docName");
 const addForm = document.getElementById("addForm");
 if (addForm) {
@@ -131,7 +127,6 @@ if (addForm) {
         alert("Document added successfully");
     });
 }
-// row
 const tbody = document.querySelector(".doc-table tbody");
 function generateTableRow(doc) {
     const statusData = STATUS[doc.status];
@@ -170,14 +165,12 @@ function generateTableRow(doc) {
             </td>
           </tr>`;
 }
-// loading table
 function load() {
     if (tbody) {
         tbody.innerHTML = documents.map((doc) => generateTableRow(doc)).join("");
     }
 }
 load();
-// edit
 document.addEventListener("click", (e) => {
     const target = e.target;
     if (target.classList.contains("edit")) {
@@ -200,7 +193,6 @@ document.addEventListener("click", (e) => {
         addDoc.style.display = "flex";
     }
 });
-// delete
 document.addEventListener("click", (e) => {
     const target = e.target;
     if (target.classList.contains("delete")) {
@@ -211,7 +203,6 @@ document.addEventListener("click", (e) => {
         alert("Document deleted successfully");
     }
 });
-// search
 const searchInp = document.querySelector("#searchInput");
 function search(searchText) {
     searchText = searchText.toLowerCase();

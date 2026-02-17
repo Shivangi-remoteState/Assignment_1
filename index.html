@@ -1,189 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div class="app">
+      <div class="side-bar">
+        <div class="NUL">
+          <div class="NU">
+            <img class="logo-img" src="./images/Union.svg" alt="" logo />
 
-</head>
-
-<body>
-  <!-- =----------------main container -------------------------->
-  <div class="app">
-    <!-- ----------------left part--------------------------->
-    <div class="side-bar">
-      <!-- logo --------------->
-      <div class="NUL">
-        <div class="NU">
-          <img class="logo-img" src="./images/Union.svg" alt="" logo />
-
-          <!--------------- Jessica Thompson -------------->
-          <div class="user-card">
-            <div class="avatar-userinfo">
-              <div class="avatar">
-                <img src="./images/Group 79.svg" alt="User-avatar" />
+            <div class="user-card">
+              <div class="avatar-userinfo">
+                <div class="avatar">
+                  <img src="./images/Group 79.svg" alt="User-avatar" />
+                </div>
+                <div class="user-info">
+                  <div class="name">
+                    <span><b>Jessica Thompson</b></span>
+                  </div>
+                  <small><span class="role">Primary User</span></small>
+                </div>
               </div>
-              <div class="user-info">
-                <div class="name"><span><b>Jessica Thompson</b></span></div>
-                <small><span class="role">Primary User</span></small>
-              </div>
-            </div>
-            <div>
-              <button id="user-drop" class="dropdown"><img src="./images/chevron-down.svg" alt="dropdown" /></button>
-            </div>
-            <div class="logout-menu">
-              <button id="logoutBtn">Logout</button>
-            </div>
-          </div>
-        </div>
-        <!-- nav-item list------------------------- --->
-        <div class="sidebar">
-          <nav class="primary">
-            <ul class="nav-list">
-              <li>
-                <a href="#" class="nav-item">
-                  <img src="./images/home.svg" alt="" class="nav-icon" />
-                  <span class="nav-text">Home</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="nav-item active" aria-current="page">
-                  <img src="./images/file-text.svg" alt="" class="nav-icon" />
-                  <span class="nav-text">Documents</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="nav-item">
-                  <img src="./images/message-circle.svg" alt="" class="nav-icon" />
-                  <span class="nav-text">Chat with Neptune</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="nav-item">
-                  <img src="./images/help-circle.svg" alt="" class="nav-icon" />
-                  <span class="nav-text">Help</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="nav-item">
-                  <img src="./images/settings.svg" alt="" class="nav-icon" />
-                  <span class="nav-text">Settings</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-      </div>
-      <!-- ------support card------------------------ -->
-      <div class="support-card">
-        <div class="tel-trouble">
-          <a href="tel: 7868762351"><img class="telephone" src="./images/phone.svg" alt="Telephone-icone" /></a>
-
-          <h3 class="support-title">Having trouble?</h3>
-        </div>
-        <div class="text-btn">
-          <p class="support-text">
-            Feel free to contact us and we will always help you through the
-            process.
-          </p>
-
-          <button class="support-btn">Contact us</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- -----right part---------------------------------- -->
-
-    <!-- MAIN -->
-    <div class="main">
-      <!-- breadcrumb -->
-      <div class="breadcrumb">
-        <a id="home" href="#"><b>Home</b></a>
-        <button id="sidebtn"><img class="sideicon" src="./images/chevron-right.svg" alt=""></button>
-        <a class="doc" id="doc" href="#">Documents</a>
-      </div>
-      <!-- ------------header----------- -->
-      <div class="header">
-        <h1>My Documents</h1>
-
-        <!-- ACTION BAR ---------------------->
-        <div class="header-actions">
-          <button class="add-btn">+ Add</button>
-
-          <div class="search">
-            <input id="searchInput" placeholder="Search documents" />
-            <span class="search-icon">
-              <button class="search-btn" type="button">
-                <img class="search-icon" src="./images/search.svg" alt="" />
-              </button>
-            </span>
-          </div>
-        </div>
-      </div>
-      <!-- table -->
-      <div class="mainTable">
-        <table class="doc-table">
-
-          <thead>
-            <tr>
-              <th class="change "><input type="checkbox" />
-                <button class="dropdown drop">
+              <div>
+                <button id="user-drop" class="dropdown">
                   <img src="./images/chevron-down.svg" alt="dropdown" />
                 </button>
-              </th>
-              <th>Document Name</th>
-              <th>Status</th>
-              <th>Last Modified</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
+              </div>
+              <div class="logout-menu">
+                <button id="logoutBtn">Logout</button>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar">
+            <nav class="primary">
+              <ul class="nav-list">
+                <li>
+                  <a href="#" class="nav-item">
+                    <img src="./images/home.svg" alt="" class="nav-icon" />
+                    <span class="nav-text">Home</span>
+                  </a>
+                </li>
 
-          <tbody>
-            
-           <!-- row  -->
+                <li>
+                  <a href="#" class="nav-item active" aria-current="page">
+                    <img src="./images/file-text.svg" alt="" class="nav-icon" />
+                    <span class="nav-text">Documents</span>
+                  </a>
+                </li>
 
-          </tbody>
-        </table>
+                <li>
+                  <a href="#" class="nav-item">
+                    <img
+                      src="./images/message-circle.svg"
+                      alt=""
+                      class="nav-icon"
+                    />
+                    <span class="nav-text">Chat with Neptune</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="nav-item">
+                    <img
+                      src="./images/help-circle.svg"
+                      alt=""
+                      class="nav-icon"
+                    />
+                    <span class="nav-text">Help</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="nav-item">
+                    <img src="./images/settings.svg" alt="" class="nav-icon" />
+                    <span class="nav-text">Settings</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="support-card">
+          <div class="tel-trouble">
+            <a href="tel: 7868762351"
+              ><img
+                class="telephone"
+                src="./images/phone.svg"
+                alt="Telephone-icone"
+            /></a>
+
+            <h3 class="support-title">Having trouble?</h3>
+          </div>
+          <div class="text-btn">
+            <p class="support-text">
+              Feel free to contact us and we will always help you through the
+              process.
+            </p>
+
+            <button class="support-btn">Contact us</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="breadcrumb">
+          <a id="home" href="#"><b>Home</b></a>
+          <button id="sidebtn">
+            <img class="sideicon" src="./images/chevron-right.svg" alt="" />
+          </button>
+          <a class="doc" id="doc" href="#">Documents</a>
+        </div>
+        <div class="header">
+          <h1>My Documents</h1>
+
+          <div class="header-actions">
+            <button class="add-btn">+ Add</button>
+
+            <div class="search">
+              <input id="searchInput" placeholder="Search documents" />
+              <span class="search-icon">
+                <button class="search-btn" type="button">
+                  <img class="search-icon" src="./images/search.svg" alt="" />
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="mainTable">
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th class="change">
+                  <input type="checkbox" />
+                  <button class="dropdown drop">
+                    <img src="./images/chevron-down.svg" alt="dropdown" />
+                  </button>
+                </th>
+                <th>Document Name</th>
+                <th>Status</th>
+                <th>Last Modified</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- Add documentform -->
-  <div class="addDoc" id="addDoc">
-    <div class="addDoc-content">
-      <h2>Add New Document</h2>
-      <form id="addForm">
-        <label for="docName">Document Name:</label>
-        <input type="text" id="docName" placeholder="Document name goes here">
+    <div class="addDoc" id="addDoc">
+      <div class="addDoc-content">
+        <h2>Add New Document</h2>
+        <form id="addForm">
+          <label for="docName">Document Name:</label>
+          <input
+            type="text"
+            id="docName"
+            placeholder="Document name goes here"
+          />
 
-        <label for="docStatus">Status:</label>
-        <select id="docStatus">
-          <option value="Needs Signing">Needs Signing</option>
-          <option value="Pending">Pending</option>
-          <option value="Completed">Completed</option>
-        </select>
+          <label for="docStatus">Status:</label>
+          <select id="docStatus">
+            <option value="Needs Signing">Needs Signing</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
 
-        <div id="pendingPeopleDiv">
-          <label>Waiting for (number of persons):</label>
-          <input type="number" id="pendingCount">
-        </div>
+          <div id="pendingPeopleDiv">
+            <label>Waiting for (number of persons):</label>
+            <input type="number" id="pendingCount" />
+          </div>
 
-        <div class="DocBtns">
-          <button type="button" id="cancelAdd" class="cancel-btn">Cancel</button>
-          <button type="submit" id="saveAdd" class="save-btn">Save</button>
-        </div>
-
-      </form>
+          <div class="DocBtns">
+            <button type="button" id="cancelAdd" class="cancel-btn">
+              Cancel
+            </button>
+            <button type="submit" id="saveAdd" class="save-btn">Save</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-  <script src="dist/script.js"></script>
-
-</body>
+    <script src="dist/script.js"></script>
+  </body>
 </html>

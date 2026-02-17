@@ -53,7 +53,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// add doc when clicking add button
 const addBtn = document.querySelector(".add-btn");
 const addDoc = document.querySelector(".addDoc") as HTMLElement;
 
@@ -65,7 +64,6 @@ if (addBtn) {
   });
 }
 
-// cancel
 const cancelForm = document.getElementById("cancelAdd");
 if (cancelForm) {
   cancelForm.addEventListener("click", () => {
@@ -82,7 +80,7 @@ addDoc.addEventListener("click", (e) => {
   }
 });
 
-// pending status
+
 const docStatus = document.getElementById("docStatus") as HTMLInputElement;
 const pendingPeopleDiv = document.getElementById("pendingPeopleDiv");
 if (docStatus) {
@@ -96,7 +94,7 @@ if (docStatus) {
     }
   });
 }
-// form
+
 const docName = document.getElementById("docName") as HTMLInputElement;
 const addForm = document.getElementById("addForm") as HTMLFormElement;
 if (addForm) {
@@ -155,7 +153,6 @@ if (addForm) {
   });
 }
 
-// row
 const tbody = document.querySelector(".doc-table tbody");
 function generateTableRow(doc: FileDocument) {
   const statusData = STATUS[doc.status];
@@ -195,7 +192,7 @@ function generateTableRow(doc: FileDocument) {
           </tr>`;
 }
 
-// loading table
+
 function load() {
   if (tbody) {
     tbody.innerHTML = documents.map((doc) => generateTableRow(doc)).join("");
@@ -203,7 +200,7 @@ function load() {
 }
 load();
 
-// edit
+
 document.addEventListener("click", (e) => {
   const target = e.target as HTMLElement;
 
@@ -227,7 +224,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// delete
 document.addEventListener("click", (e) => {
   const target = e.target as HTMLElement;
   if (target.classList.contains("delete")) {
@@ -240,7 +236,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// search
+
 const searchInp = document.querySelector("#searchInput") as HTMLInputElement;
 function search(searchText: string) {
   searchText = searchText.toLowerCase();

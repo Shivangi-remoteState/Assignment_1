@@ -1,4 +1,18 @@
 "use strict";
+const STATUS = {
+    "Needs Signing": {
+        button: "Sign Now",
+        className: "needs-signing",
+    },
+    "Pending": {
+        button: "Preview",
+        className: "pending",
+    },
+    "Completed": {
+        button: "Download PDF",
+        className: "completed",
+    },
+};
 let editId = null;
 let documents = JSON.parse(localStorage.getItem("documents") || "[]");
 function saveToLocal() {
@@ -18,7 +32,6 @@ if (dropDownBtn) {
 }
 document.addEventListener("click", (e) => {
     const target = e.target;
-    // console.log(target);
     const clickDropBtn = dropDownBtn.contains(target);
     const clickLogBtn = logOutMenu.contains(target);
     if (!clickDropBtn && !clickLogBtn) {
@@ -28,14 +41,22 @@ document.addEventListener("click", (e) => {
 // add doc when clicking add button
 const addBtn = document.querySelector(".add-btn");
 const addDoc = document.querySelector(".addDoc");
-addBtn.addEventListener("click", () => {
-    addDoc.style.display = "flex";
-});
+if (addBtn) {
+    addBtn.addEventListener("click", () => {
+        if (addDoc) {
+            addDoc.style.display = "flex";
+        }
+    });
+}
 // cancel
 const cancelForm = document.getElementById("cancelAdd");
-cancelForm.addEventListener("click", () => {
-    addDoc.style.display = "none";
-});
+if (cancelForm) {
+    cancelForm.addEventListener("click", () => {
+        if (addDoc) {
+            addDoc.style.display = "none";
+        }
+    });
+}
 addDoc.addEventListener("click", (e) => {
     const target = e.target;
     if (target === addDoc) {
@@ -45,82 +66,81 @@ addDoc.addEventListener("click", (e) => {
 // pending status
 const docStatus = document.getElementById("docStatus");
 const pendingPeopleDiv = document.getElementById("pendingPeopleDiv");
-docStatus.addEventListener("change", () => {
-    if (docStatus.value === "Pending") {
-        pendingPeopleDiv.style.display = "block";
-    }
-    else {
-        pendingPeopleDiv.style.display = "none";
-    }
-});
-const docName = document.getElementById("docName");
-// form
-const addForm = document.getElementById("addForm");
-addForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = docName.value.trim();
-    const status = docStatus.value;
-    const pendcount = document.getElementById("pendingCount");
-    const pentcountval = pendcount.value;
-    const pendingCount = status === "Pending" ? Number(pentcountval) : 0;
-    if (name == "") {
-        alert("Please enter a valid name");
-        return;
-    }
-    const d = new Date();
-    const date = d.toLocaleDateString();
-    const time = d.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
+if (docStatus) {
+    docStatus.addEventListener("change", () => {
+        if (pendingPeopleDiv) {
+            if (docStatus.value === "Pending") {
+                pendingPeopleDiv.style.display = "block";
+            }
+            else {
+                pendingPeopleDiv.style.display = "none";
+            }
+        }
     });
-    if (editId) {
-        const doc = documents.find((d) => d.id === editId);
-        if (doc) {
-            doc.name = name;
-            doc.status = status;
-            doc.pendingCount = pendingCount;
-            doc.date = date;
-            doc.time = time;
-            saveToLocal();
-            load();
-            addDoc.style.display = "none";
-            alert("Document updated successfully");
-            editId = null;
+}
+// form
+const docName = document.getElementById("docName");
+const addForm = document.getElementById("addForm");
+if (addForm) {
+    addForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = docName.value.trim();
+        const status = docStatus.value;
+        const pendcount = document.getElementById("pendingCount");
+        const pentcountval = pendcount.value;
+        const pendingCount = status === "Pending" ? Number(pentcountval) : 0;
+        if (name == "") {
+            alert("Please enter a valid name");
             return;
         }
-    }
-    const newDoc = {
-        id: Date.now(),
-        name,
-        status,
-        pendingCount,
-        date,
-        time,
-    };
-    documents.push(newDoc);
-    saveToLocal();
-    load();
-    addForm.reset();
-    addDoc.style.display = "none";
-    alert("Document added successfully");
-});
+        const d = new Date();
+        const date = d.toLocaleDateString("en-gb");
+        const time = d.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+        if (editId) {
+            const doc = documents.find((d) => d.id === editId);
+            if (doc) {
+                doc.name = name;
+                doc.status = status;
+                doc.pendingCount = pendingCount;
+                doc.date = date;
+                doc.time = time;
+                saveToLocal();
+                load();
+                addDoc.style.display = "none";
+                alert("Document updated successfully");
+                editId = null;
+                return;
+            }
+        }
+        const newDoc = {
+            id: Date.now(),
+            name,
+            status,
+            pendingCount,
+            date,
+            time,
+        };
+        documents.push(newDoc);
+        saveToLocal();
+        load();
+        addForm.reset();
+        addDoc.style.display = "none";
+        alert("Document added successfully");
+    });
+}
 // row
 const tbody = document.querySelector(".doc-table tbody");
 function generateTableRow(doc) {
-    let buttonText = "";
-    if (doc.status === "Needs Signing") {
-        buttonText = "Sign Now";
-    }
-    if (doc.status === "Pending") {
-        buttonText = "Preview";
-    }
-    if (doc.status === "Completed") {
-        buttonText = "Download PDF";
-    }
-    let badge = `<span class="badge ${doc.status.toLowerCase().replace(" ", "-")}">${doc.status}</span>`;
+    const statusData = STATUS[doc.status];
+    const buttonText = statusData.button;
+    const badgeClass = statusData.className;
+    let badge = `<span class="badge ${badgeClass}">${doc.status}</span>`;
     let pendingText = "";
     if (doc.status === "Pending") {
-        pendingText = `<span class="subtext"><i>Waiting for <b>${doc.pendingCount}</b></i></span>`;
+        pendingText = `<span class="subtext"><i>Waiting for <b>${doc.pendingCount} persons</b></i></span>`;
     }
     return `<tr data-id = ${doc.id}>
             <td><input type="checkbox" /></td>
@@ -152,30 +172,27 @@ function generateTableRow(doc) {
 }
 // loading table
 function load() {
-    tbody.innerHTML = "";
-    documents.forEach((doc) => {
-        tbody.innerHTML += generateTableRow(doc);
-    });
+    if (tbody) {
+        tbody.innerHTML = documents.map((doc) => generateTableRow(doc)).join("");
+    }
 }
 load();
 // edit
 document.addEventListener("click", (e) => {
-    //    console.log(e)
     const target = e.target;
-    //    console.log(target.classList.contains("menu-item"))
-    //   const tr = target.closest("tr");
-    //   console.log(target.closest("tr"))
     if (target.classList.contains("edit")) {
         const tr = target.closest("tr");
         const id = Number(tr.dataset.id);
         editId = id;
         const doc = documents.find((d) => d.id === id);
         if (doc) {
-            if (doc.status === "Pending") {
-                pendingPeopleDiv.style.display = "block";
-            }
-            else {
-                pendingPeopleDiv.style.display = "none";
+            if (pendingPeopleDiv) {
+                if (doc.status === "Pending") {
+                    pendingPeopleDiv.style.display = "block";
+                }
+                else {
+                    pendingPeopleDiv.style.display = "none";
+                }
             }
             docName.value = doc.name;
             docStatus.value = doc.status;
@@ -190,8 +207,6 @@ document.addEventListener("click", (e) => {
         const tr = target.closest("tr");
         const id = Number(tr.dataset.id);
         documents = documents.filter((doc) => doc.id !== id);
-        saveToLocal();
-        tbody.innerHTML = "";
         load();
         alert("Document deleted successfully");
     }
@@ -206,11 +221,12 @@ function search(searchText) {
         const myDate = doc.date.toLowerCase().includes(searchText);
         return myName || myStatus || myDate;
     });
-    tbody.innerHTML = "";
-    filterDoc.forEach((doc) => {
-        tbody.innerHTML += generateTableRow(doc);
+    if (tbody) {
+        tbody.innerHTML = filterDoc.map((doc) => generateTableRow(doc)).join("");
+    }
+}
+if (searchInp) {
+    searchInp.addEventListener("input", () => {
+        search(searchInp.value);
     });
 }
-searchInp.addEventListener("input", () => {
-    search(searchInp.value);
-});

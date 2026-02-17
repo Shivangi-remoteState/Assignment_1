@@ -294,11 +294,8 @@ ul {
 .search-btn,
 .dropdown {
   border: none;
-  background-color: white;
+  background-color: #fff;
   cursor: pointer;
-}
-.drop {
-  background-color: #f9fafb;
 }
 
 .header-actions {
